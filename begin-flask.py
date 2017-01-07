@@ -1,5 +1,6 @@
-from flask import Flask, redirect, url_for, request
+from flask import Flask, redirect, url_for, request , render_template
 app = Flask(__name__)
+
 
 @app.route('/success/<name>')
 def success(name):
@@ -18,8 +19,7 @@ def login():
 
 @app.route('/')
 def index():
-   return '<html><body><h1>Hello World</h1></body></html>'
-
+   return render_template('hello.html')
 
 if __name__ == '__main__':
     app.run(debug = True)
