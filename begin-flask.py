@@ -17,8 +17,6 @@ def login():
         return redirect(url_for('success',name = user))
 
 
-
-
 @app.route('/hello/<int:score>')
 def hello_name(score):
    return render_template('hello.html', marks = score)
@@ -28,6 +26,11 @@ def hello_name(score):
 def result():
    dict = {'phy':50,'che':60,'maths':70}
    return render_template('result.html', result = dict)
+
+
+@app.route("/")
+def index():
+   return render_template("index.html")
 
 if __name__ == '__main__':
     app.run(debug = True)
